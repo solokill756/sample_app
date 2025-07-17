@@ -7,6 +7,9 @@
 # Ignore bundler config.
 /.bundle
 
+# Ignore all environment files.
+/.env*
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
@@ -31,3 +34,7 @@
 /config/master.key
 /config/database.yml
 /test/*
+
+config/settings.local.yml
+config/settings/*.local.yml
+config/environments/*.local.yml

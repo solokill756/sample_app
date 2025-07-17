@@ -1,0 +1,31 @@
+# Default settings for all environments
+app:
+  name: "Ruby on Rails Tutorial Sample App"
+  version: "1.0.0"
+  author: "Thao"
+  description: "A sample application for learning Rails"
+
+# I18n settings
+i18n:
+  default_locale: :en
+  available_locales:
+    - :en
+    - :vi
+
+# External links
+external_links:
+  rails_tutorial_help: "http://www.railstutorial.org/help"
+  rails_tutorial_book: "http://www.railstutorial.org/book"
+  rails_tutorial_contact: "https://www.railstutorial.org/contact"
+
+# UI settings
+ui:
+  show_debug_info: false
+
+# Model settings
+models:
+  micropost:
+    content_max_length: 140
+  user:
+    name_max_length: 50
+    email_max_length: 255

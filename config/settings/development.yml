@@ -1,0 +1,8 @@
+# Development specific settings
+ui:
+  show_debug_info: true
+
+# Database settings
+database:
+  pool_size: 5
+  timeout: 5000

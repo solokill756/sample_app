@@ -1,0 +1,7 @@
+<% provide(:title, t("contact.title")) %>
+<h1><%= t("contact.title") %></h1>
+<p><%= t("contact.hello") %> <%= user_name("Thao") %></p>
+<p>
+    <%= t("contact.description") %>
+    <%= link_to t("contact.contact_page"), Settings.external_links.rails_tutorial_contact %>.
+</p>

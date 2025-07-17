@@ -1,0 +1,8 @@
+# Production specific settings
+ui:
+  show_debug_info: false
+
+# Database settings
+database:
+  pool_size: 20
+  timeout: 10000
