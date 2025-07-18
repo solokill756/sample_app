@@ -33,5 +33,8 @@ models:
     year_of_past: 100
 # Body class settings
 body_class:
-  user_new_page: "user-new-page"
-  user_show_page: "user-show-page"
+  users:
+    new_page: "user-new-page"
+    show_page: "user-show-page"
+  sessions:
+    new_page: "session-new-page"

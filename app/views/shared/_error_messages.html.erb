@@ -1,6 +1,6 @@
 <% if @user.errors.any? %>
   <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "error") %> <%= t("errors.messages.has_errors") %></h2>
+    <h2><%= pluralize(@user.errors.count , t("shared.error_messages.count")) %></h2>
     <ul>
     <% @user.errors.full_messages.each do |msg| %>
       <li><%= msg %></li>

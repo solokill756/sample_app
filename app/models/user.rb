@@ -1,6 +1,8 @@
 class User < ApplicationRecord
   has_secure_password
 
+  attr_accessor :remember_token
+
   has_many :microposts, dependent: :destroy
 
   USER_PERMIT_PARAMS = %i(name email password password_confirmation birthday
@@ -24,6 +26,36 @@ gender).freeze
             format: {with: Settings.models.user.valid_email_regex}
   validates :gender, presence: true
   validate :birthday_within_last_100_years
+
+  class << self
+    def new_token
+      SecureRandom.urlsafe_base64
+    end
+
+    def digest string
+      cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST : BCrypt::Engine.cost
+      BCrypt::Password.create(string, cost: cost)
+    end
+  end
+
+  def forget
+    update_column :remember_digest, nil
+  end
+
+  def authenticated? remember_token
+    return false if remember_digest.nil? || remember_token.nil?
+
+    begin
+      BCrypt::Password.new(remember_digest).is_password?(remember_token)
+    rescue BCrypt::Errors::InvalidHash
+      false
+    end
+  end
+
+  def remember
+    self.remember_token = User.new_token
+    update_column :remember_digest, User.digest(remember_token)
+  end
 
   private
 
