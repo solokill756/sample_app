@@ -33,3 +33,6 @@ vi:
               invalid: "không phải là ngày hợp lệ"
               future: "không được trong tương lai"
               past_one_hundred: "không được trong quá khứ (tối đa 100 năm trước)"
+            gender:
+              blank: "không được để trống"
+              invalid: "không phải là giới tính hợp lệ"

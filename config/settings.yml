@@ -31,3 +31,7 @@ models:
     email_max_length: 255
     valid_email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     year_of_past: 100
+# Body class settings
+body_class:
+  user_new_page: "user-new-page"
+  user_show_page: "user-show-page"

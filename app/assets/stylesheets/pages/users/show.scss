@@ -1,0 +1,212 @@
+.user-show-page {
+  // ===========================
+  // 1. TAG STYLES (alphabetical)
+  // ===========================
+  
+  h1 {
+    align-items: center;
+    color: #333;
+    display: flex;
+    font-size: 1.8em;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  p {
+    color: #666;
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 12px;
+
+    strong {
+      color: #333;
+      font-weight: 600;
+    }
+  }
+
+  // ===========================
+  // 2. CLASS STYLES (alphabetical by component)
+  // ===========================
+
+  // Layout Components
+  .row {
+    display: flex;
+    justify-content: flex-start;
+    min-height: 60vh;
+    padding: 20px 0;
+  }
+
+  .col-md-4 {
+    flex: 0 0 33.333333%;
+    max-width: 33.333333%;
+    padding: 0 15px;
+  }
+
+  // Aside Components
+  aside {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 30px;
+    padding: 30px;
+    transition: all 0.3s ease;
+
+    &:hover {
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+      transform: translateY(-2px);
+    }
+
+    section {
+      margin-top: 20px;
+      padding: 15px 0;
+
+      &:first-child {
+        border: 0;
+        margin-top: 0;
+        padding-top: 0;
+      }
+
+      &.user_info {
+        margin-top: 0;
+        text-align: center;
+        border-bottom: 1px solid #e9ecef;
+        padding-bottom: 25px;
+        margin-bottom: 25px;
+
+        h1 {
+          align-items: center;
+          color: #2c3e50;
+          display: flex;
+          font-size: 2.2em;
+          font-weight: 700;
+          gap: 20px;
+          justify-content: center;
+          margin-bottom: 20px;
+          letter-spacing: -1px;
+        }
+
+        p {
+          background: #f8f9fa;
+          border-radius: 8px;
+          color: #495057;
+          font-size: 0.95em;
+          margin: 8px 0;
+          padding: 10px 15px;
+          
+          strong {
+            color: #2c3e50;
+            display: inline-block;
+            min-width: 80px;
+            text-align: left;
+          }
+        }
+      }
+    }
+  }
+
+  // Gravatar Components
+  .gravatar {
+    border: 4px solid #007bff;
+    border-radius: 50%;
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    width: 80px;
+    height: 80px;
+
+    &:hover {
+      border-color: #0056b3;
+      box-shadow: 0 8px 30px rgba(0, 123, 255, 0.4);
+      transform: scale(1.1) rotate(5deg);
+    }
+  }
+
+  // User Info Components
+  .user-details {
+    background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+    border-radius: 10px;
+    margin-top: 20px;
+    padding: 20px;
+
+    .detail-item {
+      align-items: center;
+      border-bottom: 1px solid #dee2e6;
+      display: flex;
+      justify-content: space-between;
+      padding: 12px 0;
+
+      &:last-child {
+        border-bottom: none;
+      }
+
+      .label {
+        color: #6c757d;
+        font-size: 0.9em;
+        font-weight: 600;
+        text-transform: uppercase;
+      }
+
+      .value {
+        color: #495057;
+        font-weight: 500;
+      }
+    }
+  }
+
+  // ===========================
+  // 3. RESPONSIVE DESIGN (MEDIA QUERIES)
+  // ===========================
+
+  @media (max-width: 768px) {
+    .row {
+      flex-direction: column;
+      padding: 10px;
+    }
+
+    .col-md-4 {
+      flex: 1;
+      max-width: 100%;
+      padding: 0;
+    }
+
+    aside {
+      margin-bottom: 20px;
+      padding: 20px;
+
+      section.user_info {
+        h1 {
+          flex-direction: column;
+          font-size: 1.8em;
+          gap: 15px;
+        }
+      }
+    }
+
+    .gravatar {
+      width: 60px;
+      height: 60px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    aside {
+      padding: 15px;
+      
+      section.user_info {
+        h1 {
+          font-size: 1.5em;
+        }
+        
+        p {
+          font-size: 0.9em;
+          padding: 8px 12px;
+        }
+      }
+    }
+
+    .gravatar {
+      width: 50px;
+      height: 50px;
+    }
+  }
+}

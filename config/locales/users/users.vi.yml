@@ -3,6 +3,25 @@ vi:
     new:
       title: "Đăng ký"
       create_account: "Tạo tài khoản của tôi"
+      success: "Tài khoản đã được tạo thành công!"
+      gender_options:
+        male: "Nam"
+        female: "Nữ"
+        other: "Khác"
+      select_gender: "Chọn giới tính"
+
+    create:
+      success: "Chào mừng %{name} đến với Sample App!"
+      error: "Có lỗi xảy ra khi tạo tài khoản."
 
     show:
-      profile: "Hồ sơ"
+      joined: "Tham gia vào: %{date}"
+      updated_at: "Cập nhật vào: %{date}"
+      email: "Email: %{email}"
+      not_found: "Không tìm thấy người dùng"
+      birthday: "Ngày sinh: %{date}"
+      gender: "Giới tính: %{gender}"
+      gender_options:
+        male: "Nam"
+        female: "Nữ"
+        other: "Khác"

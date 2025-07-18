@@ -33,3 +33,6 @@ en:
               invalid: "is not a valid date"
               future: "can't be in the future"
               past_one_hundred: "can't be in the past (maximum is 100 years ago)"
+            gender:
+              blank: "can't be blank"
+              invalid: "is not a valid gender"

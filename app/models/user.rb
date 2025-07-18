@@ -3,6 +3,15 @@ class User < ApplicationRecord
 
   has_many :microposts, dependent: :destroy
 
+  USER_PERMIT_PARAMS = %i(name email password password_confirmation birthday
+gender).freeze
+
+  enum gender: {
+    male: 0,
+    female: 1,
+    other: 2
+  }, _prefix: true
+
   before_save :downcase_email
 
   validates :name,
@@ -13,6 +22,7 @@ class User < ApplicationRecord
             uniqueness: {case_sensitive: false},
             length: {maximum: Settings.models.user.email_max_length},
             format: {with: Settings.models.user.valid_email_regex}
+  validates :gender, presence: true
   validate :birthday_within_last_100_years
 
   private
