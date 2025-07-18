@@ -12,26 +12,27 @@ inherit_from:
 # Common configuration.
 AllCops:
   # Include gemspec and Rakefile
+  NewCops: enable
   SuggestExtensions: false
   Include:
-    - 'app/**/*'
-    - 'lib/**/*'
-    - '**/*.gemspec'
-    - 'Gemfile'
+    - "app/**/*"
+    - "lib/**/*"
+    - "**/*.gemspec"
+    - "Gemfile"
   Exclude:
-    - 'vendor/**/*'
-    - 'config/unicorn.rb'
-    - 'bin/*'
-    - 'db/**/*'
-    - 'spec/**/*'
-    - 'script/rails'
-    - 'config/**/*'
-    - 'app/views/**/*'
-    - 'app/assets/**/*'
-    - 'app/javascript/**/*'
-    - '.idea/**/*'
-    - '**/.DS_Store'
-    - '**/.keep'
+    - "vendor/**/*"
+    - "config/unicorn.rb"
+    - "bin/*"
+    - "db/**/*"
+    - "spec/**/*"
+    - "script/rails"
+    - "config/**/*"
+    - "app/views/**/*"
+    - "app/assets/**/*"
+    - "app/javascript/**/*"
+    - ".idea/**/*"
+    - "**/.DS_Store"
+    - "**/.keep"
 
 # Indent private/protected/public as deep as method definitions
 Layout/AccessModifierIndentation:
@@ -167,7 +168,7 @@ Style/ClassCheck:
     - kind_of?
 
 Metrics/ClassLength:
-  CountComments: false  # count full line comments?
+  CountComments: false # count full line comments?
   Max: 100
 
 # Align with the style guide.
@@ -179,11 +180,11 @@ Style/CollectionMethods:
   #   PreferredMethods:
   #     find: detect
   PreferredMethods:
-    collect: 'map'
-    collect!: 'map!'
-    inject: 'reduce'
-    detect: 'find'
-    find_all: 'select'
+    collect: "map"
+    collect!: "map!"
+    inject: "reduce"
+    detect: "find"
+    find_all: "select"
 
 # Checks formatting of special comments
 Style/CommentAnnotation:
@@ -228,9 +229,9 @@ Layout/EmptyLinesAroundModuleBody:
 
 Naming/FileName:
   Exclude:
-    - '**/Rakefile'
-    - '**/Gemfile'
-    - '**/Capfile'
+    - "**/Rakefile"
+    - "**/Gemfile"
+    - "**/Capfile"
 
 # Checks use of for or each in multiline loops.
 Style/For:
@@ -282,12 +283,11 @@ Style/LambdaCall:
     - call
     - braces
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 80
   AllowURI: true
   Exclude:
     - config/routes.rb
-
 
 Style/Next:
   # With `always` all conditions at the end of an iteration needs to be
@@ -314,7 +314,7 @@ Style/MethodDefParentheses:
     - require_no_parentheses
 
 Metrics/MethodLength:
-  CountComments: false  # count full line comments?
+  CountComments: false # count full line comments?
   Max: 10
 
 Naming/MethodName:
@@ -336,18 +336,23 @@ Style/ParenthesesAroundCondition:
 
 Style/PercentLiteralDelimiters:
   PreferredDelimiters:
-    '%':  ()
-    '%i': ()
-    '%q': ()
-    '%Q': ()
-    '%r': '{}'
-    '%s': ()
-    '%w': ()
-    '%W': ()
-    '%x': ()
+    "%": ()
+    "%i": ()
+    "%q": ()
+    "%Q": ()
+    "%r": "{}"
+    "%s": ()
+    "%w": ()
+    "%W": ()
+    "%x": ()
 
 Naming/PredicateName:
   ForbiddenPrefixes:
+    - get_
+  NamePrefix:
+    - is_
+    - has_
+    - have_
     - get_
 
 Style/RaiseArgs:
@@ -355,7 +360,6 @@ Style/RaiseArgs:
   SupportedStyles:
     - compact # raise Exception.new(msg)
     - exploded # raise Exception, msg
-
 
 Style/RedundantReturn:
   # When true allows code like `return x, y`.
@@ -376,7 +380,6 @@ Style/SignalException:
     - only_raise
     - only_fail
     - semantic
-
 
 Style/SingleLineBlockParams:
   Methods:
