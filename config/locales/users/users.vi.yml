@@ -1,0 +1,8 @@
+vi:
+  users:
+    new:
+      title: "Đăng ký"
+      create_account: "Tạo tài khoản của tôi"
+
+    show:
+      profile: "Hồ sơ"

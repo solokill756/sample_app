@@ -1,0 +1,35 @@
+en:
+  activerecord:
+    models:
+      user: "User"
+    attributes:
+      user:
+        name: "Name"
+        email: "Email"
+        password: "Password"
+        password_confirmation: "Password confirmation"
+        birthdate: "Birthdate"
+      micropost:
+        content: "Content"
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "can't be blank"
+              too_short: "is too short (minimum is %{count} characters)"
+            email:
+              blank: "can't be blank"
+              invalid: "is invalid"
+              taken: "has already been taken"
+            password:
+              blank: "can't be blank"
+              too_short: "is too short (minimum is %{count} characters)"
+            password_confirmation:
+              blank: "can't be blank"
+              confirmation: "doesn't match Password"
+            birthday:
+              blank: "can't be blank"
+              invalid: "is not a valid date"
+              future: "can't be in the future"
+              past_one_hundred: "can't be in the past (maximum is 100 years ago)"

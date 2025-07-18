@@ -1,0 +1,35 @@
+vi:
+  activerecord:
+    models:
+      user: "Người dùng"
+    attributes:
+      user:
+        name: "Tên"
+        email: "Email"
+        password: "Mật khẩu"
+        password_confirmation: "Xác nhận mật khẩu"
+        birthdate: "Ngày sinh"
+      micropost:
+        content: "Nội dung"
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "không được để trống"
+              too_short: "quá ngắn (tối thiểu %{count} ký tự)"
+            email:
+              blank: "không được để trống"
+              invalid: "không hợp lệ"
+              taken: "đã được sử dụng"
+            password:
+              blank: "không được để trống"
+              too_short: "quá ngắn (tối thiểu %{count} ký tự)"
+            password_confirmation:
+              blank: "không được để trống"
+              confirmation: "không khớp với Mật khẩu"
+            birthday:
+              blank: "không được để trống"
+              invalid: "không phải là ngày hợp lệ"
+              future: "không được trong tương lai"
+              past_one_hundred: "không được trong quá khứ (tối đa 100 năm trước)"

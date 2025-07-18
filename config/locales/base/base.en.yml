@@ -1,0 +1,20 @@
+en:
+  # Application-wide translations
+  app:
+    name: "Sample App"
+    title: "Ruby on Rails Tutorial Sample App"
+
+  # Navigation and common UI elements
+  ui:
+    log_in: "Log in"
+    switch_to_vietnamese: "Tiếng Việt"
+    switch_to_english: "English"
+    user: "User"
+
+  # Shared components (for lazy lookup)
+  shared:
+    header:
+      home: "Home"
+      help: "Help"
+      microposts: "Microposts"
+      contact: "Contact"

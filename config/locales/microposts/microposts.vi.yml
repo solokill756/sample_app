@@ -1,0 +1,11 @@
+vi:
+  microposts:
+    index:
+      title: "Microposts"
+      all: "Tất cả Microposts"
+      none_yet: "Chưa có microposts nào."
+
+    show:
+      posted: "Đã đăng"
+      ago: "trước"
+      by: "bởi"

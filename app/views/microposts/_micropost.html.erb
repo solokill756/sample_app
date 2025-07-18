@@ -1,0 +1,11 @@
+<div class="micropost mb-3 p-3 border-bottom">
+    <div class="content">
+        <%= micropost.content %>
+    </div>
+    <div class="timestamp text-muted">
+        <%= t(".posted") %> <%= time_ago_in_words(micropost.created_at) %> <%= t(".ago") %>
+        <% if micropost.user %>
+            <%= t(".by") %> <%= micropost.user.name %>
+        <% end %>
+    </div>
+</div>

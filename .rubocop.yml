@@ -346,7 +346,7 @@ Style/PercentLiteralDelimiters:
     "%W": ()
     "%x": ()
 
-Naming/PredicateName:
+Naming/PredicatePrefix:
   ForbiddenPrefixes:
     - get_
   NamePrefix:
@@ -398,6 +398,10 @@ Style/StringLiterals:
   SupportedStyles:
     - single_quotes
     - double_quotes
+
+Style/StringLiteralsInInterpolation:
+  Enabled: true
+  EnforcedStyle: double_quotes
 
 Layout/SpaceAroundEqualsInParameterDefault:
   EnforcedStyle: space
