@@ -1,0 +1,11 @@
+en:
+  microposts:
+    index:
+      title: "Microposts"
+      all: "All Microposts"
+      none_yet: "No microposts yet."
+
+    show:
+      posted: "Posted"
+      ago: "ago"
+      by: "by"

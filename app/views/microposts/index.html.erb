@@ -1,9 +1,9 @@
-<% provide(:title, t("microposts.title")) %>
-<h1><%= t("microposts.all") %></h1>
+<% provide(:title, t(".title")) %>
+<h1><%= t(".title") %></h1>
 <% if @microposts.any? %>
     <div class="microposts">
-        <%= render partial: "shared/micropost", collection: @microposts %>
+        <%= render partial: "micropost", collection: @microposts %>
     </div>
 <% else %>
-    <p><%= t("microposts.none_yet") %></p>
+    <p><%= t(".none_yet") %></p>
 <% end %>

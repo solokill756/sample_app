@@ -1,0 +1,20 @@
+vi:
+  # Application-wide translations
+  app:
+    name: "Ứng dụng mẫu"
+    title: "Ứng dụng mẫu Ruby on Rails Tutorial"
+
+  # Navigation and common UI elements
+  ui:
+    log_in: "Đăng nhập"
+    switch_to_vietnamese: "Tiếng Việt"
+    switch_to_english: "English"
+    user: "Người dùng"
+
+  # Shared components (for lazy lookup)
+  shared:
+    header:
+      home: "Trang chủ"
+      help: "Trợ giúp"
+      microposts: "Microposts"
+      contact: "Liên hệ"

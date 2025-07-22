@@ -1,0 +1,20 @@
+vi:
+  static_pages:
+    home:
+      title: "Trang chủ"
+      welcome_to_sample_app: "Chào mừng đến với Ứng dụng mẫu"
+      description: "Đây là trang chủ của ứng dụng mẫu Ruby on Rails Tutorial."
+      sign_up_now: "Đăng ký ngay!"
+
+    help:
+      title: "Trợ giúp"
+      description: "Nhận trợ giúp về Ruby on Rails Tutorial tại"
+      rails_tutorial_help_page: "trang trợ giúp Rails Tutorial"
+      book_info: "Để nhận trợ giúp về ứng dụng mẫu này, xem"
+      ruby_on_rails_tutorial_book: "sách Ruby on Rails Tutorial"
+
+    contact:
+      title: "Liên hệ"
+      hello: "Xin chào"
+      description: "Liên hệ với Ruby on Rails Tutorial về ứng dụng mẫu tại"
+      contact_page: "trang liên hệ"
