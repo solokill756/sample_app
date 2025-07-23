@@ -1,24 +1,11 @@
 module SessionsHelper
   def log_in user
-    user.remember
     session[:user_id] = user.id
-    session[:remember_token] = user.remember_token
+    session[:session_token] = user.remember_token
   end
 
   def current_user
-    if (user_id = session[:user_id]) &&
-       (remember_token = session[:remember_token])
-      user = User.find_by(id: user_id)
-
-      if user&.try(:authenticated?, remember_token)
-        @current_user ||= user
-      else
-        session.clear
-        @current_user = nil
-      end
-    else
-      @current_user = nil
-    end
+    @current_user ||= user_from_cookies || user_from_session
   end
 
   def logged_in?
@@ -26,8 +13,39 @@ module SessionsHelper
   end
 
   def log_out
-    current_user&.try(:forget)
-    session.clear
+    current_user&.forget
+    clear_data
     @current_user = nil
+  end
+
+  def remember_cookies user
+    user.create_remember_token
+    cookies.permanent.signed[:user_id] = user.id
+    cookies.permanent[:remember_token] = user&.remember_token
+  end
+
+  def clear_data
+    cookies.delete(:user_id)
+    cookies.delete(:remember_token)
+    session.delete(:user_id)
+    session.delete(:session_token)
+  end
+
+  def user_from_cookies
+    user_id = cookies.signed[:user_id]
+    remember_token = cookies[:remember_token]
+    return nil unless user_id && remember_token
+
+    user = User.find_by(id: user_id)
+    return user if user&.authenticated?(remember_token)
+  end
+
+  def user_from_session
+    user_id = session[:user_id]
+    session_token = session[:session_token]
+    return nil unless user_id && session_token
+
+    user = User.find_by(id: user_id)
+    return user if user&.authenticated?(session_token)
   end
 end

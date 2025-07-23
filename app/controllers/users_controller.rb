@@ -38,9 +38,8 @@ class UsersController < ApplicationController
 
   def sign_up_successful
     reset_session
-
+    @user&.create_remember_token
     log_in @user
-
     flash[:success] = t(".success")
     redirect_to @user, status: :see_other
   end

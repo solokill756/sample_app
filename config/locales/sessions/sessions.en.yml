@@ -8,6 +8,8 @@ en:
       log_in: "Log in"
       new_user?: "New user?"
       sign_up_now!: "Sign up now!"
+      remember_me: "Remember me"
+      remember_me_content: "Keep me logged in"
     create:
       success: "Logged in successfully!"
       error: "Email or password is incorrect."
