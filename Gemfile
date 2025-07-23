@@ -46,6 +46,7 @@ gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)
 gem "bootsnap", require: false
 # Use Sass to process CSS
 gem "bootstrap", "~> 5.2"
+gem "byebug", platforms: %i(mri mingw x64_mingw)
 gem "config"
 gem "rails-i18n", "~> 7.0"
 gem "sassc-rails"

@@ -18,3 +18,5 @@ en:
       help: "Help"
       microposts: "Microposts"
       contact: "Contact"
+    error_messages:
+      not_saved: "could not be saved"

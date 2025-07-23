@@ -1,0 +1,39 @@
+<% provide :title, t(".title") %>
+<div class="row justify-content-center align-items-center" style="min-height: 80vh;">
+  <div class="col-md-6 col-lg-5 col-12">
+    <div class="card shadow-lg rounded-4 border-0">
+      <div class="card-body p-4">
+        <h1 class="mb-4 text-center fw-bold"><%= t(".title") %></h1>
+        <%= form_for @user, url: signup_path do |f| %>
+          <%= render "shared/error_messages" %>
+          <div class="mb-3">
+            <%= f.label :name, class: "form-label fw-semibold" %>
+            <%= f.text_field :name, class: "form-control form-control-lg" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :email, class: "form-label fw-semibold" %>
+            <%= f.email_field :email, class: "form-control form-control-lg" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :password, class: "form-label fw-semibold" %>
+            <%= f.password_field :password, class: "form-control form-control-lg" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :password_confirmation, class: "form-label fw-semibold" %>
+            <%= f.password_field :password_confirmation, class: "form-control form-control-lg" %>
+          </div>
+          <div class="mb-3">
+            <%= f.label :birthday, class: "form-label fw-semibold" %>
+            <%= f.date_select :birthday, start_year: UsersHelper::BIRTHDAY_START_YEAR, end_year: Time.current.year, class: "form-control form-control-lg" %>
+          </div>
+         <div class="mb-3">
+            <%= f.select :gender, gender_options_for_select, prompt: t(".select_gender") %>
+          </div>
+          <div class="d-grid">
+            <%= f.submit t(".create_account"), class: "btn btn-primary btn-lg rounded-pill" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

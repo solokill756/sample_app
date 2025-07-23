@@ -18,3 +18,5 @@ vi:
       help: "Trợ giúp"
       microposts: "Microposts"
       contact: "Liên hệ"
+    error_messages:
+      has_errors: "có lỗi"

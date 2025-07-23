@@ -3,6 +3,25 @@ en:
     new:
       title: "Sign up"
       create_account: "Create my account"
+      success: "Account created successfully!"
+      gender_options:
+        male: "Male"
+        female: "Female"
+        other: "Other"
+      select_gender: "Select gender"
+
+    create:
+      success: "Welcome to the Sample App, %{name}!"
+      error: "There was an error creating your account."
 
     show:
-      profile: "Profile"
+      joined: "Joined: %{date}"
+      updated_at: "Updated at: %{date}"
+      email: "Email: %{email}"
+      not_found: "User not found"
+      birthday: "Birthday: %{date}"
+      gender: "Gender: %{gender}"
+      gender_options:
+        male: "Male"
+        female: "Female"
+        other: "Other"
