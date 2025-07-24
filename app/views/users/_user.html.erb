@@ -1,0 +1,23 @@
+<div class="user-item card mb-3">
+  <div class="card-body">
+    <div class="d-flex align-items-center justify-content-between">
+      <!-- User Info Section -->
+      <div class="d-flex align-items-center flex-grow-1">
+        <%= link_to user_path(user), class: "text-decoration-none d-flex align-items-center flex-grow-1" do %>
+          <div class="user-avatar me-3">
+            <%= gravatar_for user %>
+          </div>
+          <div class="user-info">
+            <h5 class="card-title mb-1 text-dark"><%= user.name %></h5>
+            <p class="card-text text-muted mb-0"><%= user.email %></p>
+          </div>
+        <% end %>
+      </div>
+
+      <!-- Admin Actions Section -->
+      <div class="admin-section">
+        <%= admin_delete_link(user) %>
+      </div>
+    </div>
+  </div>
+</div>
