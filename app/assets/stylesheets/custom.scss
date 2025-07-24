@@ -28,6 +28,10 @@ body {
   padding: 10px 20px;
 }
 
+.dropdown-menu.active {
+  display: block;
+}
+
 /* ID styles */
 #logo {
   color: white !important;

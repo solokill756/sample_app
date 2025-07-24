@@ -1,0 +1,16 @@
+en:
+  sessions:
+    new:
+      title: "Log in"
+      welcome_back: "Welcome back!"
+      email: "Email"
+      password: "Password"
+      log_in: "Log in"
+      new_user?: "New user?"
+      sign_up_now!: "Sign up now!"
+    create:
+      success: "Logged in successfully!"
+      error: "Email or password is incorrect."
+    destroy:
+      success: "Logged out successfully!"
+      error: "There was an error logging out."

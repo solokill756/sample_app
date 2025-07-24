@@ -18,5 +18,12 @@ vi:
       help: "Trợ giúp"
       microposts: "Microposts"
       contact: "Liên hệ"
+      users: "Người dùng"
+      account: "Tài khoản"
+      profile: "Hồ sơ"
+      settings: "Cài đặt"
+      log_out: "Đăng xuất"
+      log_in: "Đăng nhập"
     error_messages:
-      has_errors: "có lỗi"
+      count: "lỗi"
+      has_errors: "Hành động không thể hoàn thành do có lỗi."

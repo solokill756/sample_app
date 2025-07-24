@@ -1,0 +1,273 @@
+.session-new-page {
+  // ===========================
+  // 1. TAG STYLES (alphabetical)
+  // ===========================
+
+  h1 {
+    color: #333;
+    font-size: 2.2em;
+    font-weight: 600;
+    letter-spacing: -1px;
+    margin-bottom: 30px;
+    margin-top: 0;
+    text-align: center;
+  }
+
+  input {
+    border-radius: 6px;
+    font-size: 16px;
+    height: 45px !important;
+    padding: 0 15px;
+    transition: all 0.3s ease;
+
+    &:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+      outline: none;
+    }
+  }
+
+  label {
+    color: #34495e;
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    margin-top: 15px;
+
+    &:first-of-type {
+      margin-top: 0;
+    }
+  }
+
+  p {
+    color: #6c757d;
+    font-size: 14px;
+    margin-top: 25px;
+    text-align: center;
+
+    a {
+      color: #007bff;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: #0056b3;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  // ===========================
+  // 2. CLASS STYLES (alphabetical by component)
+  // ===========================
+
+  // Button Components
+  .btn {
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
+    padding: 12px 30px;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    width: 100%;
+
+    &.btn-primary {
+      background: linear-gradient(135deg, #007bff, #0056b3);
+      color: white;
+
+      &:hover {
+        background: linear-gradient(135deg, #0056b3, #004085);
+        box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+        transform: translateY(-2px);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+
+      &:focus {
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+      }
+    }
+  }
+
+  // Form Layout Components
+  .col-md-6.col-md-offset-3 {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    max-width: 450px;
+    padding: 40px;
+    position: relative;
+  }
+
+  // Form Input Components
+  .form-control {
+    background: #fff;
+    border: 2px solid #e1e5e9;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-bottom: 15px;
+    padding: 12px 15px;
+    transition: all 0.3s ease;
+    width: 100%;
+
+    &:hover {
+      border-color: #c6cbd1;
+    }
+
+    &:focus {
+      border-color: #007bff;
+      box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+      outline: none;
+    }
+
+    &::placeholder {
+      color: #adb5bd;
+      font-style: italic;
+    }
+  }
+
+  // Layout Components
+  .row {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 80vh;
+    padding: 20px;
+
+    .col-md-6.col-md-offset-3 {
+      margin: 0;
+    }
+  }
+
+  // ===========================
+  // 3. ANIMATIONS & KEYFRAMES
+  // ===========================
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .col-md-6.col-md-offset-3 {
+    animation: fadeInUp 0.6s ease-out;
+  }
+
+  // ===========================
+  // 4. PSEUDO CLASSES & STATES
+  // ===========================
+
+  .form-control {
+    &:valid {
+      border-color: #28a745;
+    }
+
+    &:invalid:not(:placeholder-shown) {
+      border-color: #dc3545;
+    }
+  }
+
+  // ===========================
+  // 5. RESPONSIVE DESIGN (MEDIA QUERIES)
+  // ===========================
+
+  @media (max-width: 768px) {
+    // Tag styles - responsive
+    h1 {
+      font-size: 1.8em;
+      margin-bottom: 25px;
+    }
+
+    // Component styles - responsive
+    .col-md-6.col-md-offset-3 {
+      margin: 20px auto;
+      max-width: 90%;
+      padding: 30px 25px;
+    }
+
+    .row {
+      min-height: 70vh;
+      padding: 15px;
+    }
+
+    .btn {
+      padding: 15px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    // Component styles - mobile
+    .col-md-6.col-md-offset-3 {
+      max-width: 95%;
+      padding: 25px 20px;
+    }
+
+    h1 {
+      font-size: 1.6em;
+    }
+
+    .form-control {
+      font-size: 16px; // Prevent zoom on iOS
+    }
+  }
+
+  // ===========================
+  // 6. DARK MODE SUPPORT (OPTIONAL)
+  // ===========================
+
+  @media (prefers-color-scheme: dark) {
+    .col-md-6.col-md-offset-3 {
+      background: #2d3748;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+
+    h1 {
+      color: #f7fafc;
+    }
+
+    label {
+      color: #e2e8f0;
+    }
+
+    .form-control {
+      background: #4a5568;
+      border-color: #718096;
+      color: #f7fafc;
+
+      &::placeholder {
+        color: #a0aec0;
+      }
+
+      &:focus {
+        border-color: #63b3ed;
+        box-shadow: 0 0 0 3px rgba(99, 179, 237, 0.1);
+      }
+    }
+
+    p {
+      color: #cbd5e0;
+
+      a {
+        color: #63b3ed;
+
+        &:hover {
+          color: #3182ce;
+        }
+      }
+    }
+  }
+}

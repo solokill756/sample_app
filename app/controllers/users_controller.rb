@@ -3,26 +3,24 @@ class UsersController < ApplicationController
 
   # GET /signup
   def new
-    @body_class = Settings.body_class.user_new_page
     @user = User.new
+    self.body_class = Settings.body_class.dig(:users, :new_page)
   end
 
   # POST /signup
   def create
     @user = User.new user_params
+
     if @user.save
-      flash[:success] = t(".success", name: @user.name)
-      redirect_to @user
+      sign_up_successful
     else
-      @body_class = Settings.body_class.user_new_page
-      flash.now[:danger] = t(".error")
-      render :new, status: :unprocessable_entity
+      sign_up_failed
     end
   end
 
   # GET /users/:id
   def show
-    @body_class = Settings.body_class.user_show_page
+    self.body_class = Settings.body_class.dig(:users, :show_page)
   end
 
   private
@@ -36,5 +34,20 @@ class UsersController < ApplicationController
     return if @user
 
     redirect_to root_path, flash: {danger: t(".not_found")}
+  end
+
+  def sign_up_successful
+    reset_session
+
+    log_in @user
+
+    flash[:success] = t(".success")
+    redirect_to @user, status: :see_other
+  end
+
+  def sign_up_failed
+    self.body_class = Settings.body_class.dig(:users, :new_page)
+    flash.now[:danger] = t(".error")
+    render :new, status: :unprocessable_entity
   end
 end

@@ -18,5 +18,12 @@ en:
       help: "Help"
       microposts: "Microposts"
       contact: "Contact"
+      users: "Users"
+      account: "Account"
+      profile: "Profile"
+      settings: "Settings"
+      log_out: "Log out"
+      log_in: "Log in"
     error_messages:
-      not_saved: "could not be saved"
+      count: "errors"
+      has_errors: "The action could not be completed due to errors."

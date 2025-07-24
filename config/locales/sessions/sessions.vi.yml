@@ -1,0 +1,16 @@
+vi:
+  sessions:
+    new:
+      title: "Đăng nhập"
+      welcome: "Chào mừng bạn đến với ứng dụng mẫu!"
+      email: "Email"
+      password: "Mật khẩu"
+      log_in: "Đăng nhập"
+      new_user?: "Bạn chưa có tài khoản?"
+      sign_up_now!: "Đăng ký ngay!"
+    create:
+      success: "Đăng nhập thành công!"
+      error: "Email hoặc mật khẩu không chính xác."
+    destroy:
+      success: "Đăng xuất thành công!"
+      error: "Có lỗi xảy ra khi đăng xuất."
