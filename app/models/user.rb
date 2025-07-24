@@ -25,7 +25,14 @@ gender).freeze
             length: {maximum: Settings.models.user.email_max_length},
             format: {with: Settings.models.user.valid_email_regex}
   validates :gender, presence: true
+  validates :password,
+            presence: true,
+            length: {minimum: Settings.models.user.password_min_length},
+            allow_nil: true
+
   validate :birthday_within_last_100_years
+
+  scope :newest, -> {order(created_at: :desc)}
 
   class << self
     def new_token
