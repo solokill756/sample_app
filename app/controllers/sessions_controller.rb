@@ -15,8 +15,8 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by email: params.dig(:session, :email)&.downcase
 
-    if user&.authenticate params.dig(:session, :password)
-      login_successfull user
+    if user&.authenticate(params.dig(:session, :password))
+      login_successful user
     else
       login_failed
     end
@@ -24,11 +24,15 @@ class SessionsController < ApplicationController
 
   private
 
-  def login_successfull user
+  def login_successful user
     reset_session
-
+    if params.dig(:session,
+                  :remember_me) == Settings.models.dig(:user, :remember_me)
+      remember_cookies(user)
+    else
+      user&.create_remember_token
+    end
     log_in user
-
     flash[:success] = t(".success")
     redirect_to user, status: :see_other
   end

@@ -52,7 +52,7 @@ gender).freeze
     end
   end
 
-  def remember
+  def create_remember_token
     self.remember_token = User.new_token
     update_column :remember_digest, User.digest(remember_token)
   end
