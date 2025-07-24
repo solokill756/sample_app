@@ -2,15 +2,17 @@ en:
   activerecord:
     models:
       user: "User"
+
     attributes:
       user:
         name: "Name"
         email: "Email"
         password: "Password"
         password_confirmation: "Password confirmation"
-        birthdate: "Birthdate"
+        birthday: "Birthday"
       micropost:
         content: "Content"
+
     errors:
       models:
         user:

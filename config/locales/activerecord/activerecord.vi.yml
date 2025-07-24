@@ -2,15 +2,17 @@ vi:
   activerecord:
     models:
       user: "Người dùng"
+
     attributes:
       user:
         name: "Tên"
         email: "Email"
         password: "Mật khẩu"
         password_confirmation: "Xác nhận mật khẩu"
-        birthdate: "Ngày sinh"
+        birthday: "Ngày sinh"
       micropost:
         content: "Nội dung"
+
     errors:
       models:
         user:

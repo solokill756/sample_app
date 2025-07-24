@@ -4,24 +4,56 @@ en:
       title: "Sign up"
       create_account: "Create my account"
       success: "Account created successfully!"
-      gender_options:
-        male: "Male"
-        female: "Female"
-        other: "Other"
       select_gender: "Select gender"
+      submit: "Create Account"
+      create_account: "Create my account"
 
     create:
       success: "Welcome to the Sample App, %{name}!"
       error: "There was an error creating your account."
-
+      
     show:
       joined: "Joined: %{date}"
       updated_at: "Updated at: %{date}"
       email: "Email: %{email}"
-      not_found: "User not found"
       birthday: "Birthday: %{date}"
       gender: "Gender: %{gender}"
       gender_options:
         male: "Male"
         female: "Female"
         other: "Other"
+    
+    edit:
+      title: "Edit Profile"
+      success: "Profile updated successfully!"
+      error: "There was an error updating your profile."
+      submit: "Update Profile"
+      update_profile: "Update my profile"
+      change: "Change"
+
+    update:
+      success: "Profile updated successfully!"
+      error: "There was an error updating your profile."
+      
+    form:
+      submit: "Submit"
+      gender_options:
+        male: "Male"
+        female: "Female"
+        other: "Other"
+      select_gender: "Select Gender"
+
+    index:
+      title: "Users"
+      no_users: "No users found."
+      delete: "Delete"
+      delete_confirm: "Are you sure you want to delete this user?"
+
+    destroy:
+      success: "User deleted successfully!"
+      error: "There was an error deleting the user."
+      
+    not_admin: "You are not authorized to perform this action."
+    please_login: "Please log in to access this page."
+    not_correct_user: "You are not authorized to view this profile."
+    not_found: "User not found"
