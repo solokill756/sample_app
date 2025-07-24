@@ -1,0 +1,3 @@
+vi:
+  user_mailers:
+    activation_subject: "Kích hoạt tài khoản"

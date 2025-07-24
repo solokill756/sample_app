@@ -447,7 +447,7 @@ Layout/SpaceAfterSemicolon:
 
 Layout/SpaceBeforeBlockBraces:
   Description: >-
-    Checks that the left block brace has or doesn't have space
+    Checks that the left block brace have space
     before it.
   Enabled: true
 
