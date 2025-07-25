@@ -31,11 +31,27 @@ models:
     email_max_length: 255
     valid_email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     year_of_past: 100
+    password_min_length: 6
     remember_me: "1"
+    avatar_size: 80
 # Body class settings
 body_class:
   users:
     new_page: "user-new-page"
     show_page: "user-show-page"
+    edit_page: "user-edit-page"
+    index_page: "user-index-page"
   sessions:
     new_page: "session-new-page"
+
+# Pagy settings
+pagy:
+  show_check_count: 1
+  items: 10
+  size: [1, 4, 4, 1] # [left_gap, left_pages, right_pages, right_gap]
+
+# Page settings
+page:
+  users:
+    edit:
+      avatar_path: "http://gravatar.com/emails"

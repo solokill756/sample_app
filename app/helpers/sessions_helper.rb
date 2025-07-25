@@ -8,6 +8,10 @@ module SessionsHelper
     @current_user ||= user_from_cookies || user_from_session
   end
 
+  def current_user? user
+    user == current_user
+  end
+
   def logged_in?
     !current_user.nil?
   end
@@ -37,7 +41,7 @@ module SessionsHelper
     return nil unless user_id && remember_token
 
     user = User.find_by(id: user_id)
-    return user if user&.authenticated?(remember_token)
+    user if user&.authenticated?(remember_token)
   end
 
   def user_from_session
@@ -46,6 +50,10 @@ module SessionsHelper
     return nil unless user_id && session_token
 
     user = User.find_by(id: user_id)
-    return user if user&.authenticated?(session_token)
+    user if user&.authenticated?(session_token)
+  end
+
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
   end
 end
