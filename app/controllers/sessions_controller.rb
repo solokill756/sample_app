@@ -16,6 +16,7 @@ class SessionsController < ApplicationController
     user = User.find_by email: params.dig(:session, :email)&.downcase
 
     if user&.authenticate(params.dig(:session, :password))
+
       login_successful user
     else
       login_failed
@@ -25,21 +26,31 @@ class SessionsController < ApplicationController
   private
 
   def login_successful user
-    reset_session
-    if params.dig(:session,
-                  :remember_me) == Settings.models.dig(:user, :remember_me)
-      remember_cookies(user)
+    if user.activated?
+      forwarding_url = session[:forwarding_url]
+      reset_session
+      handle_remember_me_preference user
+      log_in user
+      flash[:success] = t(".success")
+      redirect_to forwarding_url || user, status: :see_other
     else
-      user&.create_remember_token
+      flash[:danger] = t(".not_activated")
+      redirect_to root_path, status: :see_other
     end
-    log_in user
-    flash[:success] = t(".success")
-    redirect_to user, status: :see_other
   end
 
   def login_failed
     self.body_class = Settings.body_class.dig(:sessions, :new_page)
     flash.now[:danger] = t(".error")
     render :new, status: :unprocessable_entity
+  end
+
+  def handle_remember_me_preference user
+    if params.dig(:session,
+                  :remember_me) == Settings.models.dig(:user, :remember_me)
+      remember_cookies(user)
+    else
+      user&.create_remember_token
+    end
   end
 end

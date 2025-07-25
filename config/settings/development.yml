@@ -6,3 +6,13 @@ ui:
 database:
   pool_size: 5
   timeout: 5000
+
+# Mailer settings
+user_mailer:
+  authentication_method: "login"
+  address: "sandbox.smtp.mailtrap.io"
+  port: 2525
+  host: "localhost:3000"
+  protocol: "http"
+  username: <%= ENV.fetch("USER_NAME", "") %>
+  password: <%= ENV.fetch("USER_PASSWORD", "") %>
