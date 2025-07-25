@@ -54,3 +54,7 @@ page:
   users:
     edit:
       avatar_path: "http://gravatar.com/emails"
+
+# Email settings
+email:
+  from_address: "noreply@example.com"

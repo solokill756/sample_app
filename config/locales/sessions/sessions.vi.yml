@@ -16,3 +16,5 @@ vi:
     destroy:
       success: "Đăng xuất thành công!"
       error: "Có lỗi xảy ra khi đăng xuất."
+
+    not_activated: "Tài khoản của bạn chưa được kích hoạt. Vui lòng kiểm tra email để nhận liên kết kích hoạt."

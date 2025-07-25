@@ -41,7 +41,7 @@ module SessionsHelper
     return nil unless user_id && remember_token
 
     user = User.find_by(id: user_id)
-    user if user&.authenticated?(remember_token)
+    user if user&.authenticated?(:remember, remember_token)
   end
 
   def user_from_session
@@ -50,7 +50,7 @@ module SessionsHelper
     return nil unless user_id && session_token
 
     user = User.find_by(id: user_id)
-    user if user&.authenticated?(session_token)
+    user if user&.authenticated?(:remember, session_token)
   end
 
   def store_location
