@@ -10,7 +10,7 @@ gender).freeze
     other: 2
   }, _prefix: true
 
-  attr_accessor :remember_token, :activation_token
+  attr_accessor :remember_token, :activation_token, :reset_token
 
   has_many :microposts, dependent: :destroy
 
@@ -70,9 +70,23 @@ gender).freeze
     UserMailer.account_activation(self).deliver_now
   end
 
+  def send_password_reset_email
+    UserMailer.password_reset(self).deliver_now
+  end
+
   def create_remember_token
     self.remember_token = User.new_token
     update_column :remember_digest, User.digest(remember_token)
+  end
+
+  def create_reset_digest
+    self.reset_token = User.new_token
+    update_columns(reset_digest: User.digest(reset_token),
+                   reset_sent_at: Time.zone.now)
+  end
+
+  def password_reset_expired?
+    reset_sent_at < Settings.models.user.reset_token_expiration.hours.ago
   end
 
   private
