@@ -1,0 +1,24 @@
+en:
+  user_mailer:
+    account_activation:
+      greeting: "Hi"
+      welcome_message: "Welcome to the Sample App!"
+      activate_your_account: "Activate your account"
+
+    password_reset:
+      reset_title: "Reset your password using the link below:"
+      reset_instructions: "To reset your password, click the link below:"
+      reset_link_expires: "This link will expire in two hours."
+      reset_link_ignore: "If you did not request a password reset, please ignore this email and your password will remain unchanged."
+      reset_link: "Reset your password using the link below:"
+
+    password_reset_success:
+      reset_success_title: "Password Reset Successful"
+      reset_success_message: "Your password has been successfully reset, "
+      reset_success_instructions: "If you did not request this change, please contact support immediately."
+      login_link: "click here"
+      new_password: "New Password"
+
+    activation_subject: "Account Activation"
+    reset_subject: "Password Reset Instructions"
+    reset_success_subject: "Password Reset Successful"

@@ -3,7 +3,8 @@ class AccountActivationsController < ApplicationController
 
   # GET /account_activations/:id/edit
   def edit
-    if @user && !@user.activated? && @user.authenticated?(:activation, params[:id])
+    if @user && !@user.activated? && @user.authenticated?(:activation,
+                                                          params[:id])
       user_successfully_activated
     else
       user_activated_failure

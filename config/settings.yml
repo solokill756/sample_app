@@ -26,6 +26,7 @@ ui:
 models:
   micropost:
     content_max_length: 140
+
   user:
     name_max_length: 50
     email_max_length: 255
@@ -34,6 +35,7 @@ models:
     password_min_length: 6
     remember_me: "1"
     avatar_size: 80
+    reset_token_expiration: 2
 # Body class settings
 body_class:
   users:
@@ -41,8 +43,13 @@ body_class:
     show_page: "user-show-page"
     edit_page: "user-edit-page"
     index_page: "user-index-page"
+
   sessions:
     new_page: "session-new-page"
+
+  password_resets:
+    new_page: "password_resets-new-page"
+    edit_page: "password_resets-edit-page"
 
 # Pagy settings
 pagy:

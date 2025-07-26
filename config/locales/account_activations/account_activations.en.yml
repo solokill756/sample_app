@@ -3,6 +3,3 @@ en:
     edit:
       success: "Account activated!"
       error: "Invalid activation link"
-      greeting: "Hi"
-      welcome_message: "Welcome to the Sample App!"
-      activate_yoyur_account: "Activate your account"
