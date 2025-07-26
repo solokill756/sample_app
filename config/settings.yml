@@ -26,16 +26,42 @@ ui:
 models:
   micropost:
     content_max_length: 140
+
   user:
     name_max_length: 50
     email_max_length: 255
     valid_email_regex: !ruby/regexp /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
     year_of_past: 100
+    password_min_length: 6
     remember_me: "1"
+    avatar_size: 80
+    reset_token_expiration: 2
 # Body class settings
 body_class:
   users:
     new_page: "user-new-page"
     show_page: "user-show-page"
+    edit_page: "user-edit-page"
+    index_page: "user-index-page"
+
   sessions:
     new_page: "session-new-page"
+
+  password_resets:
+    new_page: "password_resets-new-page"
+    edit_page: "password_resets-edit-page"
+
+# Pagy settings
+pagy:
+  items: 10
+  size: [1, 4, 4, 1] # [left_gap, left_pages, right_pages, right_gap]
+
+# Page settings
+page:
+  users:
+    edit:
+      avatar_path: "http://gravatar.com/emails"
+
+# Email settings
+email:
+  from_address: "noreply@example.com"

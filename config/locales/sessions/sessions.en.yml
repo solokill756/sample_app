@@ -10,9 +10,13 @@ en:
       sign_up_now!: "Sign up now!"
       remember_me: "Remember me"
       remember_me_content: "Keep me logged in"
+      forgot_password?: "Forgot password?"
+
     create:
       success: "Logged in successfully!"
       error: "Email or password is incorrect."
     destroy:
       success: "Logged out successfully!"
       error: "There was an error logging out."
+
+    not_activated: "Your account is not activated. Please check your email for the activation link."

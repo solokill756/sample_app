@@ -1,0 +1,24 @@
+vi:
+  user_mailer:
+    account_activation:
+      greeting: "Chào"
+      welcome_message: "Chào mừng bạn đến với Sample App!"
+      activate_your_account: "Kích hoạt tài khoản của bạn"
+
+    password_reset:
+      reset_title: "Đặt lại mật khẩu của bạn bằng liên kết bên dưới:"
+      reset_instructions: "Để đặt lại mật khẩu của bạn, hãy nhấp vào liên kết bên dưới:"
+      reset_link_expires: "Liên kết này sẽ hết hạn sau hai giờ."
+      reset_link_ignore: "Nếu bạn không yêu cầu đặt lại mật khẩu, vui lòng bỏ qua email này và mật khẩu của bạn sẽ không thay đổi."
+      reset_link: "Đặt lại mật khẩu của bạn bằng liên kết bên dưới:"
+
+    password_reset_success:
+      reset_success_title: "Đặt lại Mật khẩu Thành công"
+      reset_success_message: "Mật khẩu của bạn đã được đặt lại thành công, "
+      reset_success_instructions: "Nếu bạn không yêu cầu thay đổi này, vui lòng liên hệ với bộ phận hỗ trợ ngay lập tức."
+      login_link: "nhấp vào đây để đăng nhập."
+      new_password: "Mật khẩu Mới"
+
+    activation_subject: "Kích hoạt Tài khoản"
+    reset_subject: "Hướng dẫn Đặt lại Mật khẩu"
+    reset_success_subject: "Đặt lại Mật khẩu Thành công"
