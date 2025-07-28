@@ -4,11 +4,7 @@ vi:
       title: "Đăng ký"
       create_account: "Tạo tài khoản của tôi"
       success: "Tài khoản đã được tạo thành công!"
-      gender_options:
-        male: "Nam"
-        female: "Nữ"
-        other: "Khác"
-      select_gender: "Chọn giới tính"
+      submit: "Tạo tài khoản"
 
     create:
       success: "Chào mừng %{name} đến với Sample App!"
@@ -18,10 +14,44 @@ vi:
       joined: "Tham gia vào: %{date}"
       updated_at: "Cập nhật vào: %{date}"
       email: "Email: %{email}"
-      not_found: "Không tìm thấy người dùng"
       birthday: "Ngày sinh: %{date}"
       gender: "Giới tính: %{gender}"
       gender_options:
         male: "Nam"
         female: "Nữ"
         other: "Khác"
+
+    edit:
+      title: "Chỉnh sửa hồ sơ"
+      success: "Hồ sơ đã được cập nhật thành công!"
+      error: "Có lỗi xảy ra khi cập nhật hồ sơ."
+      submit: "Cập nhật hồ sơ"
+      update_profile: "Cập nhật hồ sơ của tôi"
+      change: "Thay đổi"
+
+    update:
+      success: "Hồ sơ đã được cập nhật thành công!"
+      error: "Có lỗi xảy ra khi cập nhật hồ sơ."
+
+    form:
+      submit: "Gửi"
+      select_gender: "Chọn giới tính"
+      gender_options:
+        male: "Nam"
+        female: "Nữ"
+        other: "Khác"
+
+    index:
+      title: "Người dùng"
+      no_users: "Không tìm thấy người dùng."
+      delete: "Xóa"
+      delete_confirm: "Bạn có chắc chắn muốn xóa người dùng này không?"
+
+    destroy:
+      success: "Người dùng đã được xóa thành công!"
+      error: "Có lỗi xảy ra khi xóa người dùng."
+
+    not_admin: "Bạn không được phép thực hiện hành động này."
+    please_login: "Vui lòng đăng nhập để truy cập trang này."
+    not_correct_user: "Bạn không được phép xem hồ sơ này."
+    not_found: "Không tìm thấy người dùng"

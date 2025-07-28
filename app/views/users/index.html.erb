@@ -1,0 +1,18 @@
+<% provide :title, t(".title") %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <h1><%= t(".all_users") %></h1>
+      
+      <div class="users-list mt-4">
+          <%= render @users %>
+      </div>
+
+      <!-- Pagination -->
+      <div class="pagination-wrapper d-flex justify-content-center mt-4">
+        <%== pagy_bootstrap_nav(@pagy) if @pagy.pages > Settings.pagy.show_check_count %>
+      </div>
+    </div>
+  </div>
+</div>

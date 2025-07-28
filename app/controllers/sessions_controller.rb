@@ -25,6 +25,7 @@ class SessionsController < ApplicationController
   private
 
   def login_successful user
+    forwarding_url = session[:forwarding_url]
     reset_session
     if params.dig(:session,
                   :remember_me) == Settings.models.dig(:user, :remember_me)
@@ -34,7 +35,7 @@ class SessionsController < ApplicationController
     end
     log_in user
     flash[:success] = t(".success")
-    redirect_to user, status: :see_other
+    redirect_to forwarding_url || user, status: :see_other
   end
 
   def login_failed

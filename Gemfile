@@ -48,6 +48,8 @@ gem "bootsnap", require: false
 gem "bootstrap", "~> 5.2"
 gem "byebug", platforms: %i(mri mingw x64_mingw)
 gem "config"
+gem "faker", "2.21.0"
+gem "pagy"
 gem "rails-i18n", "~> 7.0"
 gem "sassc-rails"
 
