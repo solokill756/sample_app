@@ -1,0 +1,3 @@
+en:
+  user_mailer:
+    activation_subject: "Account Activation"

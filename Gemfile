@@ -1,5 +1,5 @@
 source "https://rubygems.org"
-git_source(:github){|repo| "https://github.com/#{repo}.git"}
+git_source(:github) {|repo| "https://github.com/#{repo}.git"}
 
 ruby "3.2.2"
 
@@ -49,6 +49,7 @@ gem "bootstrap", "~> 5.2"
 gem "byebug", platforms: %i(mri mingw x64_mingw)
 gem "config"
 gem "faker", "2.21.0"
+gem "figaro"
 gem "pagy"
 gem "rails-i18n", "~> 7.0"
 gem "sassc-rails"

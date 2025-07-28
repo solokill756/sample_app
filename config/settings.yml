@@ -55,3 +55,7 @@ page:
   users:
     edit:
       avatar_path: "http://gravatar.com/emails"
+
+# Email settings
+email:
+  from_address: "hosithao1622004@gmail.com"

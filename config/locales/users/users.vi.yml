@@ -55,3 +55,5 @@ vi:
     please_login: "Vui lòng đăng nhập để truy cập trang này."
     not_correct_user: "Bạn không được phép xem hồ sơ này."
     not_found: "Không tìm thấy người dùng"
+    check_email: "Vui lòng kiểm tra email của bạn để nhận liên kết kích hoạt."
+    email_error: "Đã xảy ra lỗi khi gửi email kích hoạt. Vui lòng thử lại sau."

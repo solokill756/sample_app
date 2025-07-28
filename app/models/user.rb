@@ -1,10 +1,6 @@
 class User < ApplicationRecord
   has_secure_password
 
-  attr_accessor :remember_token
-
-  has_many :microposts, dependent: :destroy
-
   USER_PERMIT_PARAMS = %i(name email password password_confirmation birthday
 gender).freeze
 
@@ -14,7 +10,13 @@ gender).freeze
     other: 2
   }, _prefix: true
 
+  attr_accessor :remember_token, :activation_token
+
+  has_many :microposts, dependent: :destroy
+
   before_save :downcase_email
+
+  before_create :create_activation_digest
 
   validates :name,
             presence: true,
@@ -49,14 +51,23 @@ gender).freeze
     update_column :remember_digest, nil
   end
 
-  def authenticated? remember_token
-    return false if remember_digest.nil? || remember_token.nil?
+  def authenticated? attribute, remember_token
+    digest_value = public_send("#{attribute}_digest")
+    return false if digest_value.nil? || remember_token.nil?
 
     begin
-      BCrypt::Password.new(remember_digest).is_password?(remember_token)
+      BCrypt::Password.new(digest_value).is_password?(remember_token)
     rescue BCrypt::Errors::InvalidHash
       false
     end
+  end
+
+  def activate
+    update_columns(activated: true, activated_at: Time.zone.now)
+  end
+
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
   end
 
   def create_remember_token
@@ -98,5 +109,10 @@ gender).freeze
     return unless birthday_date < min_date
 
     errors.add(:birthday, :past_one_hundred)
+  end
+
+  def create_activation_digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest(activation_token)
   end
 end

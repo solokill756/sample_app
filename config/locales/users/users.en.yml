@@ -57,3 +57,5 @@ en:
     please_login: "Please log in to access this page."
     not_correct_user: "You are not authorized to view this profile."
     not_found: "User not found"
+    check_email: "Please check your email for the activation link."
+    email_error: "There was an error sending the activation email. Please try again later."

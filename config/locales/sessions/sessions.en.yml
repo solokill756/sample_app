@@ -16,3 +16,5 @@ en:
     destroy:
       success: "Logged out successfully!"
       error: "There was an error logging out."
+
+    not_activated: "Your account is not activated. Please check your email for the activation link."

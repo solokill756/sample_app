@@ -1,0 +1,10 @@
+vi:
+  user_mailer:
+    account_activation:
+      subject: "Kích hoạt tài khoản"
+      greeting: "Xin chào"
+      welcome_message: "Chào mừng bạn đến với ứng dụng của chúng tôi!"
+      activate_your_account: "Vui lòng kích hoạt tài khoản của bạn bằng cách nhấp vào liên kết bên dưới:"
+      activation_link: "Nhấp vào đây để kích hoạt tài khoản của bạn"
+
+  activation_subject: "Kích hoạt tài khoản"

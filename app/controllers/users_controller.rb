@@ -13,9 +13,8 @@ class UsersController < ApplicationController
   # POST /signup
   def create
     @user = User.new user_params
-
     if @user.save
-      sign_up_successful
+      send_activation_email
     else
       sign_up_failed
     end
@@ -79,14 +78,6 @@ class UsersController < ApplicationController
     redirect_to root_path, flash: {danger: t(".not_found")}
   end
 
-  def sign_up_successful
-    reset_session
-    @user&.create_remember_token
-    log_in @user
-    flash[:success] = t(".success", name: @user.name)
-    redirect_to @user, status: :see_other
-  end
-
   def sign_up_failed
     self.body_class = Settings.body_class.dig(:users, :new_page)
     flash.now[:danger] = t(".error")
@@ -105,6 +96,16 @@ class UsersController < ApplicationController
     return if current_user?(@user) || current_user.admin?
 
     flash[:danger] = t(".not_correct_user")
+    redirect_to root_path, status: :see_other
+  end
+
+  def send_activation_email
+    @user.send_activation_email
+    flash[:info] = t(".check_email")
+    redirect_to root_path, status: :see_other
+  rescue StandardError => e
+    Rails.logger.error "Failed to send activation email: #{e.message}"
+    flash[:danger] = t(".email_error")
     redirect_to root_path, status: :see_other
   end
 end
