@@ -27,3 +27,13 @@ en:
     error_messages:
       count: "errors"
       has_errors: "The action could not be completed due to errors."
+
+    micropost_form:
+      placeholder: "Compose new micropost..."
+      image_label: "Upload an image (optional):"
+      submit: "Post"
+
+    user_infor:
+      title: "User Information"
+      profile: "View Profile"
+      microposts: "Microposts"

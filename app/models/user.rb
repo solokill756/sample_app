@@ -1,4 +1,6 @@
 class User < ApplicationRecord
+  has_many :microposts, dependent: :destroy
+
   has_secure_password
 
   USER_PERMIT_PARAMS = %i(name email password password_confirmation birthday
@@ -11,8 +13,6 @@ gender).freeze
   }, _prefix: true
 
   attr_accessor :remember_token, :activation_token, :reset_token
-
-  has_many :microposts, dependent: :destroy
 
   before_save :downcase_email
 

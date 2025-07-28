@@ -26,6 +26,13 @@ ui:
 models:
   micropost:
     content_max_length: 140
+    image_content_types:
+      - "image/jpeg"
+      - "image/gif"
+      - "image/png"
+    image_size_limit: 5 # 5MB
+    image_display_width: 250
+    image_display_height: 250
 
   user:
     name_max_length: 50
@@ -50,6 +57,9 @@ body_class:
   password_resets:
     new_page: "password_resets-new-page"
     edit_page: "password_resets-edit-page"
+
+  static_pages:
+    home_page: "static_pages-home-page"
 
 # Pagy settings
 pagy:

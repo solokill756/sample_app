@@ -38,3 +38,14 @@ en:
             gender:
               blank: "can't be blank"
               invalid: "is not a valid gender"
+
+        micropost:
+          attributes:
+            content:
+              blank: "can't be blank"
+              too_long: "is too long (maximum is %{count} characters)"
+              invalid: "contains invalid characters"
+
+    messages:
+      invalid_image_type: "is not a valid image type (allowed types: %{types})"
+      image_size_exceeded: "is too large (maximum size is %{size} MB)"

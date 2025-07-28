@@ -1,0 +1,136 @@
+.static_pages-home-page {
+    .home-container {
+        min-height: 100vh;
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-top: -20px;
+
+            .display-4 {
+                font-weight: 700;
+                text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            }
+
+            .lead {
+                font-size: 1.25rem;
+                font-weight: 300;
+                text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            }
+
+            .btn-primary {
+                background: rgba(255, 255, 255, 0.2);
+                border: 2px solid white;
+                color: white;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    background: white;
+                    color: #667eea;
+                    transform: translateY(-2px);
+                    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                }
+            }
+        }
+
+        .sidebar-container {
+            .card {
+                border: none;
+                border-radius: 15px;
+                transition: all 0.3s ease;
+
+                &:hover {
+                    transform: translateY(-5px);
+                    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+                }
+
+                .card-title {
+                    color: #667eea;
+                    font-weight: 600;
+                    border-bottom: 2px solid #f8f9fa;
+                    padding-bottom: 0.5rem;
+                }
+            }
+        }
+
+        .feed-container {
+            .card {
+                border: none;
+                border-radius: 15px;
+                overflow: hidden;
+
+                .card-header {
+                    background: linear-gradient(90deg, #f8f9fa 0%, #e9ecef 100%);
+                    border-radius: 15px 15px 0 0 !important;
+
+                    h4 {
+                        font-weight: 600;
+                    }
+
+                    .fas {
+                        color: #667eea;
+                    }
+                }
+            }
+        }
+    }
+
+    // Responsive adjustments
+    @media (max-width: 768px) {
+        .home-container {
+            .hero-section {
+                padding: 3rem 0 !important;
+
+                .display-4 {
+                    font-size: 2.5rem;
+                }
+            }
+
+            .sidebar-container {
+                margin-bottom: 2rem;
+            }
+        }
+    }
+
+    // Animation for cards
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .card {
+        animation: fadeInUp 0.6s ease-out;
+    }
+
+    // Custom scrollbar for feed
+    .feed-container {
+        max-height: 80vh;
+        overflow-y: auto;
+
+        &::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #667eea;
+            border-radius: 4px;
+
+            &:hover {
+                background: #5a6fd8;
+            }
+        }
+    }
+}

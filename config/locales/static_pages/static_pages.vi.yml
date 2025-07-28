@@ -5,6 +5,9 @@ vi:
       welcome_to_sample_app: "Chào mừng đến với Ứng dụng mẫu"
       description: "Đây là trang chủ của ứng dụng mẫu Ruby on Rails Tutorial."
       sign_up_now: "Đăng ký ngay!"
+      user_infor: "Thông tin người dùng"
+      compose_micropost: "Soạn micropost mới"
+      feed: "Dòng thời gian của bạn"
 
     help:
       title: "Trợ giúp"

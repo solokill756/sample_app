@@ -20,7 +20,10 @@ vi:
         male: "Nam"
         female: "Nữ"
         other: "Khác"
-
+      posts: "Bài viết:"
+      recent_posts: "Bài viết gần đây"
+      no_posts_yet: "Chưa có bài viết nào"
+      no_posts_description: "Người dùng này chưa chia sẻ bất kỳ suy nghĩ nào."
     edit:
       title: "Chỉnh sửa hồ sơ"
       success: "Hồ sơ đã được cập nhật thành công!"

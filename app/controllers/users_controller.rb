@@ -23,6 +23,12 @@ class UsersController < ApplicationController
   # GET /users/:id
   def show
     self.body_class = Settings.body_class.dig(:users, :show_page)
+    @page, @microposts =
+      pagy(
+        @user.microposts.recent
+        &.includes(Micropost::IMAGE_PRELOAD),
+        items: Settings.pagy.items
+      )
   end
 
   # GET /users/:id/edit
@@ -82,14 +88,6 @@ class UsersController < ApplicationController
     self.body_class = Settings.body_class.dig(:users, :new_page)
     flash.now[:danger] = t(".error")
     render :new, status: :unprocessable_entity
-  end
-
-  def logged_in_user
-    return if logged_in?
-
-    store_location
-    flash[:danger] = t(".please_login")
-    redirect_to login_path, status: :see_other
   end
 
   def correct_user

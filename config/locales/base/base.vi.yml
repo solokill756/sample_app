@@ -27,3 +27,13 @@ vi:
     error_messages:
       count: "lỗi"
       has_errors: "Hành động không thể hoàn thành do có lỗi."
+
+    micropost_form:
+      placeholder: "Soạn micropost mới..."
+      image_label: "Tải lên hình ảnh (tùy chọn):"
+      submit: "Đăng"
+
+    user_infor:
+      title: "Thông tin người dùng"
+      profile: "Xem hồ sơ"
+      microposts: "Microposts"

@@ -5,6 +5,9 @@ en:
       welcome_to_sample_app: "Welcome to the Sample App"
       description: "This is the home page for the Ruby on Rails Tutorial sample application."
       sign_up_now: "Sign up now!"
+      user_infor: "User Information"
+      compose_micropost: "Compose a new micropost"
+      feed: "Your microposts feed"
 
     help:
       title: "Help"

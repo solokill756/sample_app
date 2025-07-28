@@ -1,6 +1,17 @@
 require "active_support/core_ext/integer/time"
 
 Rails.application.configure do
+  
+  Bullet.enable = true
+  Bullet.alert = true # Hiển thị cảnh báo qua hộp thoại JavaScript trong trình duyệt
+  Bullet.bullet_logger = true # Ghi cảnh báo vào file log/bullet.log
+  Bullet.console = true # Ghi cảnh báo vào console của trình duyệt (F12 Developer Tools)
+  # Bullet.growl = false # Cảnh báo qua Growl (nếu đã cài đặt)
+  Bullet.rails_logger = true # Ghi cảnh báo vào log của Rails (log/development.log)
+  Bullet.raise = false # Gây ra exception nếu phát hiện N+1 (hữu ích cho CI/CD hoặc test)
+  Bullet.n_plus_one_query_enable = true # Kích hoạt phát hiện N+1 Query
+  Bullet.unused_eager_loading_enable = true # Phát hiện eager loading không cần thiết
+  Bullet.counter_cache_enable = true # Phát hiện trường hợp nên dùng counter cache
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded any time
