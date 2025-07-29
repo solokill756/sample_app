@@ -22,7 +22,12 @@ en:
         male: "Male"
         female: "Female"
         other: "Other"
-    
+      posts: "Posts:"
+      recent_posts: "Recent Posts"
+      no_posts_yet: "No posts yet"
+      no_posts_description: "This user hasn't shared any thoughts yet."
+      
+
     edit:
       title: "Edit Profile"
       success: "Profile updated successfully!"

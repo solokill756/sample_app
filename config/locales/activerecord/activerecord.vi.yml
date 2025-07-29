@@ -38,3 +38,14 @@ vi:
             gender:
               blank: "không được để trống"
               invalid: "không phải là giới tính hợp lệ"
+
+        micropost:
+          attributes:
+            content:
+              blank: "không được để trống"
+              too_long: "quá dài (tối đa %{count} ký tự)"
+              invalid: "chứa ký tự không hợp lệ"
+
+    messages:
+      invalid_image_type: "không phải là loại hình ảnh hợp lệ (các loại được phép: %{types})"
+      image_size_exceeded: "quá lớn (kích thước tối đa là %{size} bytes)"

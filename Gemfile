@@ -3,6 +3,8 @@ git_source(:github) {|repo| "https://github.com/#{repo}.git"}
 
 ruby "3.2.2"
 
+gem "active_storage_validations", "0.9.8"
+
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.5"
 
@@ -38,6 +40,7 @@ gem "jbuilder"
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html]
 gem "bcrypt", "~> 3.1.7"
+gem "bullet"
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem "tzinfo-data", platforms: %i(mingw mswin x64_mingw jruby)
@@ -50,6 +53,9 @@ gem "byebug", platforms: %i(mri mingw x64_mingw)
 gem "config"
 gem "faker", "2.21.0"
 gem "figaro"
+gem "i18n-js", "~> 4.2.3"
+gem "image_processing", "1.12.2"
+gem "mini_magick", "~> 4.11"
 gem "pagy"
 gem "rails-i18n", "~> 7.0"
 gem "sassc-rails"

@@ -1,11 +1,38 @@
-<div class="micropost mb-3 p-3 border-bottom">
-    <div class="content">
-        <%= micropost.content %>
-    </div>
-    <div class="timestamp text-muted">
-        <%= t(".posted") %> <%= time_ago_in_words(micropost.created_at) %> <%= t(".ago") %>
-        <% if micropost.user %>
-            <%= t(".by") %> <%= micropost.user.name %>
-        <% end %>
+<div class="micropost card mb-3">
+    <div class="card-body">
+        <div class="d-flex align-items-center mb-2">
+            <% if micropost.user %>
+                <%= link_to gravatar_for(micropost.user, size: Settings.avatar_size), micropost.user, class: "me-2" %>
+                <div>
+                    <span class="fw-bold">
+                        <%= link_to micropost.user.name, micropost.user, class: "text-decoration-none text-dark" %>
+                    </span>
+                </div>
+            <% end %>
+        </div>
+        <div class="content mb-2">
+            <p class="mb-2"><%= micropost.content %></p>
+            <% if micropost.image.attached? %>
+                <div class="mt-2">
+                    <%= image_tag micropost.image.variant(:display)%>
+                </div>
+            <% end %>
+        </div>
+        <div class="d-flex justify-content-between align-items-center text-muted small">
+            <span>
+                <%= t(".posted") %> <%= time_ago_in_words(micropost.created_at) %> <%= t(".ago") %>
+                <% if micropost.user %>
+                    <%= t(".by") %> <%= micropost.user.name %>
+                <% end %>
+            </span>
+            <% if logged_in? && current_user?(micropost.user) %>
+                <%= link_to t(".delete"), micropost,
+                    data: {
+                        "turbo-method": :delete,
+                        "turbo-confirm": t(".delete_confirmation")
+                    },
+                    class: "btn btn-sm btn-outline-danger" %>
+            <% end %>
+        </div>
     </div>
 </div>

@@ -5,7 +5,19 @@ vi:
       all: "Tất cả Microposts"
       none_yet: "Chưa có microposts nào."
 
-    show:
+    create:
+      created: "Micropost đã được tạo"
+      error: "Micropost không thể được tạo"
+
+    destroy:
+      deleted: "Micropost đã bị xóa"
+      error: "Micropost không thể bị xóa"
+
+    none_found: "Không tìm thấy micropost nào"
+
+    micropost:
       posted: "Đã đăng"
       ago: "trước"
       by: "bởi"
+      delete: "Xóa"
+      delete_confirmation: "Bạn có chắc chắn muốn xóa micropost này không?"

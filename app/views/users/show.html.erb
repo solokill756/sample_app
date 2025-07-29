@@ -1,17 +1,76 @@
-<% provide :title, @user.name %>
-<div class="row">
-  <aside class="col-md-4">
-    <section class="user_info">
-      <h1><%= gravatar_for @user %><%= @user.name %></h1>
-      <p><%= t(".joined", date: l(@user.created_at.to_date, format: :long)) %></p>
-      <p><%= t(".email", email: @user.email) %></p>
-      <% if @user.birthday.present? %>
-        <p><%= t(".birthday", date: l(@user.birthday.to_date, format: :long)) %></p>
+<% provide(:title, @user.name) %>
+
+<div class="user-show-page">
+  <div class="container-fluid">
+    <div class="row">
+      <!-- Left Sidebar - User Info -->
+      <div class="col-md-4 col-lg-3">
+        <aside class="user-sidebar sticky-top">
+          <section class="user_info">
+            <h2>
+              <%= gravatar_for @user %><%= @user.name %>
+            </h2>
+            <div class="user-details">
+              <div class="detail-item">
+                <span class="label">Email</span>
+                <span class="value"><%= @user.email %></span>
+              </div>
+              <% if @user.birthday.present? %>
+              <div class="detail-item">
+                   <p><%= t(".birthday", date: l(@user.birthday.to_date, format: :long)) %></p>
+              </div>
+   
       <% end %>
-      <% if @user.gender.present? %>
-        <p><%= t(".gender", gender: t(".gender_options.#{@user.gender}")) %></p>
+              <% if @user.gender.present? %>
+               <div class="detail-item">
+                <p><%= t(".gender", gender: t(".gender_options.#{@user.gender}")) %></p>
+              </div>
+       
       <% end %>
-      <p><%= t(".updated_at", date: l(@user.updated_at.to_date, format: :long)) %></p>
-    </section>
-  </aside>  
+             
+              <div class="detail-item">
+                <p><%= t(".joined", date: l(@user.created_at.to_date, format: :long)) %></p>
+              </div>
+              <div class="detail-item">
+                <span class="label"><%= t(".posts") %></span>
+                <span class="value">
+                  <span class="badge bg-primary rounded-pill"><%= user_microposts_count(@user) %></span>
+                </span>
+              </div>
+            </div>
+          </section>
+        </aside>
+      </div>
+
+      <!-- Right Content - Microposts -->
+      <div class="col-md-8 col-lg-9">
+        <div class="microposts-section">
+          <div class="microposts-header mb-4">
+            <h2>
+              <i class="fas fa-comments me-2"></i>
+              <%= t(".recent_posts") %> <span class="badge bg-secondary"><%= user_microposts_count(@user) %></span>
+            </h2>
+          </div>
+
+          <section class="microposts">
+            <% if @microposts.any? %>
+              <div class="microposts-list">
+                <%= render @microposts %>
+              </div>
+              
+              <div class="pagination-wrapper mt-4">
+                <%== pagy_bootstrap_nav(@page) if @page.pages > Settings.pagy.show_check_count %>
+              </div>
+            <% else %>
+              <div class="empty-state text-center py-5">
+                <i class="far fa-comment-dots fa-3x text-muted mb-3"></i>
+                <h4 class="text-muted"><%= t(".no_posts_yet") %></h4>
+                <p class="text-muted"><%= t(".no_posts_description") %></p>
+              </div>
+            <% end %>
+          </section>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
