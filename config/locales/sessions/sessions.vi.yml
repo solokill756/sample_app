@@ -10,6 +10,8 @@ vi:
       sign_up_now!: "Đăng ký ngay!"
       remember_me: "Ghi nhớ đăng nhập"
       remember_me_content: "Giữ tôi đăng nhập"
+      forgot_password?: "Quên mật khẩu?"
+
     create:
       success: "Đăng nhập thành công!"
       error: "Email hoặc mật khẩu không chính xác."

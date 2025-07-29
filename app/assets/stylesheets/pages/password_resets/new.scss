@@ -1,0 +1,74 @@
+// Main container
+.password_resets-new-page {
+  // Typography
+  h1 {
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+
+  // Layout
+  .row {
+    margin-top: 2rem;
+  }
+
+  .col-md-6 {
+    // Form labels
+    label {
+      color: #555;
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    // Form controls
+    .form-control {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+
+      &:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+        outline: none;
+      }
+    }
+
+    // Buttons
+    .btn-primary {
+      background-color: #007bff;
+      border-color: #007bff;
+      border-radius: 4px;
+      font-size: 1rem;
+      margin-top: 1rem;
+      padding: 0.75rem;
+      transition: all 0.3s ease;
+      width: 100%;
+
+      &:hover {
+        background-color: #0056b3;
+        border-color: #0056b3;
+        transform: translateY(-1px);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+// Media queries
+@media (max-width: 768px) {
+  .password-resets {
+    h1 {
+      font-size: 1.5rem;
+    }
+
+    .col-md-6 {
+      padding: 0 15px;
+    }
+  }
+}
