@@ -1,0 +1,19 @@
+vi:
+  relationships:
+    create:
+      created: "Đã theo dõi"
+      error: "Không thể theo dõi"
+
+    destroy:
+      deleted: "Đã hủy theo dõi"
+      error: "Không thể hủy theo dõi"
+
+    none_found: "Không tìm thấy mối quan hệ nào"
+
+    relationship:
+      follow: "Theo dõi"
+      unfollow: "Hủy theo dõi"
+      followers_count: "Số người theo dõi"
+
+    not_found: "Không tìm thấy mối quan hệ"
+    not_found_user: "Không tìm thấy người dùng"

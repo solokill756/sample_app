@@ -1,0 +1,272 @@
+.user-follow-page {
+    /* ==========================================================================
+         FOLLOW PAGE STYLES
+         ========================================================================== */
+
+    /* Base Container */
+    .follow-page-container {
+        min-height: 100vh;
+        padding-bottom: 2rem;
+    }
+
+    /* Hero Section */
+    .follow-hero-section {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        margin-bottom: 0;
+    }
+
+    /* User Info Container */
+    .user-info-container {
+        position: sticky;
+        top: 20px;
+
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1) !important;
+            }
+
+            .card-header {
+                border-bottom: none;
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Gravatar Styling */
+        .rounded-circle {
+            transition: all 0.3s ease;
+
+            &:hover {
+                transform: scale(1.05);
+                box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+            }
+        }
+    }
+
+    /* User Stats */
+    .user-stats .badge {
+        font-size: 0.85rem;
+        padding: 0.5rem 1rem;
+    }
+
+    /* Avatar Links in Preview */
+    .avatar-link {
+        border-radius: 50%;
+        overflow: hidden;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    /* Users List Container */
+    .users-list-container {
+        .card {
+            border-radius: 15px;
+            overflow: hidden;
+
+            .card-header {
+                border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            }
+        }
+    }
+
+    /* Users Content */
+    .users-content {
+        max-height: 70vh;
+        overflow-y: auto;
+
+        /* Custom Scrollbar for Users List */
+        &::-webkit-scrollbar {
+            width: 6px;
+        }
+        &::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        &::-webkit-scrollbar-thumb {
+            background: #17a2b8;
+            border-radius: 3px;
+        }
+        &::-webkit-scrollbar-thumb:hover {
+            background: #138496;
+        }
+    }
+
+    /* User List Items */
+    .list-group-item {
+        border-left: none;
+        border-right: none;
+        border-top: none;
+        border-bottom: 1px solid #f8f9fa;
+        padding: 1rem 1.5rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+            background-color: #f8f9fa;
+            transform: translateX(5px);
+        }
+
+        &:last-child {
+            border-bottom: none;
+        }
+    }
+
+    /* User Item Content */
+    .user-item {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        .gravatar {
+            border-radius: 50%;
+            border: 2px solid #e3e6f0;
+            transition: all 0.3s ease;
+
+            &:hover {
+                border-color: #007bff;
+                transform: scale(1.05);
+            }
+        }
+
+        .user-info {
+            h6 {
+                margin-bottom: 0.25rem;
+                font-weight: 600;
+            }
+            .text-muted {
+                font-size: 0.85rem;
+            }
+        }
+    }
+
+    /* Follow/Unfollow Buttons */
+    .btn-follow {
+        border-radius: 20px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        padding: 0.375rem 1rem;
+        transition: all 0.3s ease;
+
+        &:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    }
+
+    /* Pagination Styling */
+    .card-footer {
+        border-top: 1px solid #e3e6f0;
+    }
+
+    .pagination {
+        margin-bottom: 0;
+        justify-content: center;
+    }
+
+    .page-link {
+        border-radius: 8px;
+        margin: 0 2px;
+        border: 1px solid #dee2e6;
+        color: #667eea;
+
+        &:hover {
+            background-color: #667eea;
+            border-color: #667eea;
+            color: white;
+        }
+    }
+
+    .page-item.active .page-link {
+        background-color: #667eea;
+        border-color: #667eea;
+    }
+
+    /* Empty State */
+    .text-center .fa-users {
+        color: #dee2e6;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 991.98px) {
+        .user-info-container {
+            position: relative;
+            top: auto;
+        }
+
+        .users-content {
+            max-height: 50vh;
+        }
+
+        .follow-hero-section {
+            padding: 2rem 0 !important;
+
+            .display-6 {
+                font-size: 1.75rem;
+            }
+        }
+    }
+
+    @media (max-width: 767.98px) {
+        .container-fluid {
+            padding-left: 1rem !important;
+            padding-right: 1rem !important;
+        }
+
+        .follow-hero-section .display-6 {
+            font-size: 1.5rem;
+        }
+
+        .users-content {
+            max-height: 40vh;
+        }
+
+        .user-item {
+            flex-direction: column;
+            text-align: center;
+            gap: 0.5rem;
+        }
+
+        .user-avatars .d-flex {
+            justify-content: center;
+        }
+    }
+
+    /* Animation */
+    @keyframes slideInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .card {
+        animation: slideInUp 0.5s ease-out;
+    }
+
+    /* Badge Improvements */
+    .badge {
+        font-weight: 500;
+    }
+
+    .bg-info {
+        background-color: #17a2b8 !important;
+    }
+
+    .bg-success {
+        background-color: #28a745 !important;
+    }
+
+    .bg-primary {
+        background-color: #667eea !important;
+    }
+}

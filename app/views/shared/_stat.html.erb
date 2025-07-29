@@ -1,0 +1,11 @@
+<% @user ||= current_user %>
+<div class="stats d-flex justify-content-around mb-3">
+  <%= link_to following_user_path(@user) do %>
+    <strong id="following" class="stat"><%= @user.following.count %></strong>
+    <%= t("shared.stat.following") %>
+  <% end %>
+  <%= link_to followers_user_path(@user) do %>
+    <strong id="followers" class="stat"><%= @user.followers.count %></strong>
+    <%= t("shared.stat.followers") %>
+  <% end %>
+</div>

@@ -8,6 +8,7 @@ vi:
       user_infor: "Thông tin người dùng"
       compose_micropost: "Soạn micropost mới"
       feed: "Dòng thời gian của bạn"
+      stats: "Thống kê"
 
     help:
       title: "Trợ giúp"

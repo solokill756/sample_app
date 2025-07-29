@@ -1,5 +1,13 @@
 class User < ApplicationRecord
+  EAGER_LOAD_ASSOCIATIONS = [:user, Micropost::IMAGE_PRELOAD].freeze
+
   has_many :microposts, dependent: :destroy
+  has_many :active_relationships, class_name: Relationship.name,
+           foreign_key: :follower_id, dependent: :destroy
+  has_many :passive_relationships, class_name: Relationship.name,
+           foreign_key: :followed_id, dependent: :destroy
+  has_many :following, through: :active_relationships, source: :followed
+  has_many :followers, through: :passive_relationships, source: :follower
 
   has_secure_password
 
@@ -47,6 +55,10 @@ gender).freeze
     end
   end
 
+  def feed
+    Micropost.relate_post(following_ids << id).includes(EAGER_LOAD_ASSOCIATIONS)
+  end
+
   def forget
     update_column :remember_digest, nil
   end
@@ -89,6 +101,17 @@ gender).freeze
     reset_sent_at < Settings.models.user.reset_token_expiration.hours.ago
   end
 
+  def follow other_user
+    following << other_user unless following.include?(other_user)
+  end
+
+  def unfollow other_user
+    following.delete(other_user) if following?(other_user)
+  end
+
+  def following? other_user
+    following.include?(other_user)
+  end
   private
 
   def downcase_email

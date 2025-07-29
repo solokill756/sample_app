@@ -40,8 +40,7 @@ class MicropostsController < ApplicationController
   def handle_create_failed
     @pagy, @feed_items =
       pagy(
-        current_user.microposts.recent
-        .includes(Micropost::IMAGE_PRELOAD),
+        current_user.feed,
         items: Settings.pagy.items
       )
     flash[:danger] = t(".error")

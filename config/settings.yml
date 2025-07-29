@@ -43,6 +43,7 @@ models:
     remember_me: "1"
     avatar_size: 80
     reset_token_expiration: 2
+    show_followers_limit: 6
 # Body class settings
 body_class:
   users:
@@ -50,6 +51,7 @@ body_class:
     show_page: "user-show-page"
     edit_page: "user-edit-page"
     index_page: "user-index-page"
+    follow_page: "user-follow-page"
 
   sessions:
     new_page: "session-new-page"
