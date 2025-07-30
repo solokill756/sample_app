@@ -1,0 +1,19 @@
+en:
+  relationships:
+    create:
+      created: "Followed"
+      error: "Unable to follow"
+
+    destroy:
+      deleted: "Unfollowed"
+      error: "Unable to unfollow"
+
+    none_found: "No relationships found"
+
+    relationship:
+      follow: "Follow"
+      unfollow: "Unfollow"
+      followers_count: "Followers count"
+
+    not_found: "Relationship not found"
+    not_found_user: "User not found"

@@ -21,10 +21,11 @@ class Micropost < ApplicationRecord
                       message: :invalid_image_type
                     },
                     size: {
-                      less_than:
-                      Settings.models.micropost.image_size_limit.megabytes,
+                      less_than: Settings.models
+                                         .micropost.image_size_limit.megabytes,
                       message: :image_size_exceeded
                     }
 
   scope :recent, -> {order(created_at: :desc)}
+  scope :relate_post, -> (user_ids) {where(user_id: user_ids)}
 end

@@ -54,9 +54,23 @@ vi:
       success: "Người dùng đã được xóa thành công!"
       error: "Có lỗi xảy ra khi xóa người dùng."
 
+    show_follow:
+      view_profile: "Xem hồ sơ"
+      microposts: "Microposts"
+      connections: "Kết nối"
+      user_profile: "Hồ sơ người dùng"
+      statistics: "Thống kê"
+      quick_preview: "Xem nhanh"
+      more: "thêm"
+      not_users_found: "Không tìm thấy người dùng"
+
     not_admin: "Bạn không được phép thực hiện hành động này."
     please_login: "Vui lòng đăng nhập để truy cập trang này."
     not_correct_user: "Bạn không được phép xem hồ sơ này."
     not_found: "Không tìm thấy người dùng"
     check_email: "Vui lòng kiểm tra email của bạn để nhận liên kết kích hoạt."
     email_error: "Đã xảy ra lỗi khi gửi email kích hoạt. Vui lòng thử lại sau."
+    following: "Đang theo dõi"
+    followers: "Người theo dõi"
+    follow: "Theo dõi"
+    unfollow: "Hủy theo dõi"

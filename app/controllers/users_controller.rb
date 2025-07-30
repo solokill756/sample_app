@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
-  before_action :load_user, only: %i(show edit update destroy)
-  before_action :logged_in_user, only: %i(show edit update destroy)
+  before_action :load_user,
+                only: %i(show edit update destroy following followers)
+  before_action :logged_in_user,
+                only: %i(show edit update destroy following followers)
   before_action :correct_user, only: %i(show edit update)
   before_action :admin_user, only: :destroy
 
@@ -62,6 +64,21 @@ class UsersController < ApplicationController
       flash.now[:danger] = t(".error")
     end
     redirect_to users_path, status: :see_other
+  end
+
+  # GET /users/:id/following
+  def following
+    @title = t(".following")
+    @pagy, @users = pagy(@user.following, items: Settings.pagy.items)
+    self.body_class = Settings.body_class.dig(:users, :follow_page)
+    render :show_follow, status: :ok
+  end
+
+  def followers
+    @title = t(".followers")
+    self.body_class = Settings.body_class.dig(:users, :follow_page)
+    @pagy, @users = pagy(@user.followers, items: Settings.pagy.items)
+    render :show_follow, status: :ok
   end
 
   private

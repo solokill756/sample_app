@@ -37,3 +37,7 @@ vi:
       title: "Thông tin người dùng"
       profile: "Xem hồ sơ"
       microposts: "Microposts"
+
+    stat:
+      following: "Đang theo dõi"
+      followers: "Người theo dõi"

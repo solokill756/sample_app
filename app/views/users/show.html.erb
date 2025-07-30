@@ -44,6 +44,7 @@
 
       <!-- Right Content - Microposts -->
       <div class="col-md-8 col-lg-9">
+        <%= render "follow_form" if logged_in? %>
         <div class="microposts-section">
           <div class="microposts-header mb-4">
             <h2>
@@ -55,7 +56,7 @@
           <section class="microposts">
             <% if @microposts.any? %>
               <div class="microposts-list">
-                <%= render @microposts %>
+                <%= render @microposts%>
               </div>
               
               <div class="pagination-wrapper mt-4">

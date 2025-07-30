@@ -8,6 +8,7 @@ en:
       user_infor: "User Information"
       compose_micropost: "Compose a new micropost"
       feed: "Your microposts feed"
+      stats: "Statistics"
 
     help:
       title: "Help"

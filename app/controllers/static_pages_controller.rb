@@ -5,9 +5,7 @@ class StaticPagesController < ApplicationController
     @micropost = current_user&.microposts&.build if logged_in?
     return unless logged_in?
 
-    microposts = current_user.microposts
-                             .recent
-                             .includes(image_attachment: :blob)
+    microposts = current_user.feed
     @pagy, @feed_items = pagy(microposts, items: Settings.pagy.items)
   end
 

@@ -57,10 +57,25 @@ en:
     destroy:
       success: "User deleted successfully!"
       error: "There was an error deleting the user."
-      
+    
+    show_follow:
+      view_profile: "View Profile"
+      microposts: "Microposts"
+      connections: "Connections"
+      user_profile: "User Profile"
+      statistics: "Statistics"
+      quick_preview: "Quick Preview"
+      more: "more"
+      not_users_found: "No users found"
+      no_connections_yet: "This user doesn't have any connections yet."
+
     not_admin: "You are not authorized to perform this action."
     please_login: "Please log in to access this page."
     not_correct_user: "You are not authorized to view this profile."
     not_found: "User not found"
     check_email: "Please check your email for the activation link."
     email_error: "There was an error sending the activation email. Please try again later."
+    following: "Following"
+    followers: "Followers"
+    follow: "Follow"
+    unfollow: "Unfollow"

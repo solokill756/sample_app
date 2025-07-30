@@ -37,3 +37,7 @@ en:
       title: "User Information"
       profile: "View Profile"
       microposts: "Microposts"
+
+    stat:
+      following: "Following"
+      followers: "Followers"
